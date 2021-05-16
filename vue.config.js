@@ -5,5 +5,8 @@ esLint는 javascript 오류를 최대한 줄이기 위해 사용자에게 오류
 package.json과 같은 경로에 vue.config.js 파일을 만들어줍니다.
 */
 module.exports = {
-    lintOnSave: false
+    lintOnSave: false,
+    devServer: {
+        port:8081
+    }
 }
