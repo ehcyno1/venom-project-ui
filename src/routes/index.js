@@ -12,15 +12,18 @@ export default new VueRouter({
     routes: [
         {
             path: "/",
-            redirect: "/tutorials",
+            alias: "/tutorials",
+            name: "tutorials-list",
             component: TutorialList
         },
         {
             path: "/tutorials/:id",
+            name: "tutorial-details",
             component: Tutorial
         },
         {
             path: "/add",
+            name: "add",
             component: AddTutorial
         }
     ]

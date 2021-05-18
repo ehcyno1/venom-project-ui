@@ -34,9 +34,7 @@
                     <label><strong>Status:</strong></label>{{currentTutorial.published ? "Published":"Pending"}}
                 </div>
 
-                <a class="badge badge-warning"
-                    :href="'/tutorials/' + currentTutorial.id"
-                >Edit</a>
+                <a class="badge badge-warning" :href="'/tutorials/' + currentTutorial.id">Edit</a>
             </div>
             <div v-else>
                 <br />
@@ -54,7 +52,7 @@ export default {
     data() {
         return {
             tutorials: [],
-            currentTotorial: null,
+            currentTutorial: null,
             currentIndex: -1,
             title: ""
         };
@@ -72,11 +70,11 @@ export default {
         },
         refreshList() {
             this.retrieveTutorials();
-            this.currentTotorial = null;
+            this.currentTutorial = null;
             this.currentIndex = -1;
         },
         setActiveTutorial(tutorial, index) {
-            this.currentTotorial = tutorial;
+            this.currentTutorial = tutorial;
             this.currentIndex = index;
         },
         removeAllTutorials() {
@@ -89,7 +87,7 @@ export default {
                     console.log(exception.message);
                 });
         },
-        searchTitle() {
+        searchByTitle() {
             TutorialDataService.findByTitle(this.title)
                 .then(response => {
                     this.tutorials = response.data;
@@ -98,10 +96,10 @@ export default {
                 .catch(exception => {
                     console.log(exception.message);
                 });
-        },
-        mounted() {
-            this.retrieveTutorials();
         }
+    },
+    mounted() {
+        this.retrieveTutorials();
     }
 };
 </script>

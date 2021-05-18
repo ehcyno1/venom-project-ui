@@ -17,9 +17,9 @@
         </form>
 
         <button v-if="currentTutorial.published" class="badge badge-primary mr-2" @click="updatePublished(false)">UnPublish</button>
-        <button v-else class="badge badge-primary mr-2" @click="updatePublished(true)">Publish</button>
-        <button class="badge badge-danger mr-2" @click="deleteTutorial">Delete</button>
-        <button type="submit" class="badge badge-success" @click="updateTutorial">Update</button>
+        <button v-else class="btn btn-primary mr-2" @click="updatePublished(true)">Publish</button>
+        <button class="btn btn-danger mr-2" @click="deleteTutorial">Delete</button>
+        <button class="btn btn-success mr-2" @click="updateTutorial">Update</button>
     </div>
     <div v-else>
         <br />
@@ -36,10 +36,11 @@ export default {
         return {
             currentTutorial: null,
             message: ''
-        }
+        };
     },
     methods: {
         getTutorial(id) {
+            console.log("getTutorial");
             TutorialDataService.get(id)
                 .then(response => {
                     this.currentTutorial = response.data;
@@ -47,7 +48,7 @@ export default {
                 })
                 .catch(exception => {
                     console.log(exception.message);
-                })
+                });
         },
         updatePublished(status) {
             var data = {
@@ -68,6 +69,7 @@ export default {
         updateTutorial() {
             TutorialDataService.update(this.currentTutorial.id, this.currentTutorial)
                 .then(response => {
+                    alert("제목 : '" + this.currentTutorial.title + "' 또는 \n설명 : '" + this.currentTutorial.description + "' 로 수정되었습니다.");
                     console.log(response.data);
                     this.message = 'The Tutorial was updated successfully';
                 })
@@ -84,11 +86,11 @@ export default {
                 .catch(exception => {
                     console.log(exception.message);
                 })
-        },
-        mounted() {
-            this.message = '';
-            this.getTutorial(this.$route.params.id);
         }
+    },
+    mounted() {
+        this.message = '';
+        this.getTutorial(this.$route.params.id);
     }
 }
 </script>
