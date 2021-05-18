@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build  --dest build",
+    "build": "vue-cli-service build  --dest ../venom-project/app/views",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

@@ -5,10 +5,10 @@ import TutorialList from "../components/TutorialList";
 import Tutorial     from "../components/Tutorial";
 import AddTutorial  from "../components/AddTutorial";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter); 
 
 export default new VueRouter({
-    mode: "history",
+    mode: 'history',
     routes: [
         {
             path: "/",
