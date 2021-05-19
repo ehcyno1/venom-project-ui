@@ -6,7 +6,12 @@ package.json과 같은 경로에 vue.config.js 파일을 만들어줍니다.
 */
 module.exports = {
     lintOnSave: false,
+
     devServer: {
         port:8081
-    }
+    },
+
+    transpileDependencies: [
+      'vuetify'
+    ]
 }
