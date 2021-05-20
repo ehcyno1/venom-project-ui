@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <!-- <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <router-link to="/" class="navbar-brand">VENOM PROJECT</router-link>
       <div class="navbar-nav mr-auto">
@@ -15,7 +15,21 @@
     <div class="container mt-3">
       <router-view />
     </div>
-  </div>
+  </div> -->
+  <!-- vuetify -->
+  <v-app>
+    <v-app-bar app dark>
+      <div class="d-flex align-center mr-2">
+        VENOM-PROJECT
+      </div>
+      <v-btn to="/tutorials" text>Tutorials</v-btn>
+      <v-btn to="/add" text>Add</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
