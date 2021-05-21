@@ -20,3 +20,6 @@ we import Vuetify with command: vue add vuetify.
     Vue.use(Vuetify, {
     iconfont: 'mdi'
     })
+
+
+

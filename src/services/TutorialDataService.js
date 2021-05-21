@@ -1,8 +1,9 @@
 import http from "../http-common";
 
 class TutorialDataSerive {
-    getAll() {
-        return http.get("/tutorials");
+    getAll(params) {
+        console.log(params);
+        return http.get("/tutorials", { params });
     }
 
     get(id) {
