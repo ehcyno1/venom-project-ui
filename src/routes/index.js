@@ -29,6 +29,6 @@ export default new VueRouter({
             path: "/add",
             name: "add",
             component: AddTutorial
-        }
+        },
     ]
 });
