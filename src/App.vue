@@ -29,11 +29,39 @@
     <v-main>
       <router-view />
     </v-main>
+    <v-footer>
+      <div>
+        <!-- Parent Counter : {{counter}} <br> -->
+        Parent Counter : {{$store.state.counter}} <br>
+        <v-btn @click="addCounter">+</v-btn>
+        <v-btn @click="subCounter">-</v-btn>
+        <!-- <child v-bind:num="counter"></child> -->
+        <child></child>
+      </div> 
+    </v-footer>
   </v-app>
+  
 </template>
 
 <script>
+import Child from './components/vuex_exam01/Child';
 export default {
   name: 'app',
-}
+  components: {
+    child: Child
+  },
+  // data() {
+  //   return {
+  //     counter: 0
+  //   };
+  // },
+  methods: {
+    addCounter() {
+      this.$store.state.counter++;
+    },
+    subCounter() {
+      this.$store.state.counter--;
+    }
+  }
+};
 </script>
